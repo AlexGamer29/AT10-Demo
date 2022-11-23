@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
-import NavItems from "../NavLink/NavItems";
+import NavItems from "../NavItems/NavItems";
 import ProductItem from "../ProductItem/ProductItem";
 
 import "./Header.css";

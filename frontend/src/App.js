@@ -1,14 +1,20 @@
 import "./App.css";
-import { Product } from "./pages";
-import NavLink from "./components/Product/NavLink/NavItems";
+import { Home, Product } from "./pages";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { Breadcrumb, Header, ProductDetail } from "./components";
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <Product />
-      </div>
-    </>
+    <BrowserRouter>
+      <Header />
+      <Breadcrumb />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/san-pham" element={<Product />} />
+        <Route path="/san-pham/:id" element={<ProductDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

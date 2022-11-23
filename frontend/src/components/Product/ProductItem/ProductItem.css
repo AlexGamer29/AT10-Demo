@@ -30,6 +30,12 @@
   padding: 10px;
 }
 
+/* .product__info:hover {
+  background: #86bc42;
+  transform: translateY(0px);
+  transition: all 0.3s ease;
+} */
+
 .product__info__title > a {
   color: black;
   text-decoration: none;
