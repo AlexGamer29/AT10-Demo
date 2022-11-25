@@ -5,7 +5,12 @@ import "./ProductList.css";
 
 function ProductList() {
   const [productList, setProductList] = useState([]);
-  var url = process.env.REACT_APP_API_URL + "/api/get-products";
+  const [selectedCategory, setSelectedCategory] = useState(0);
+  var url = process.env.REACT_APP_API_URL + "/api/get-products/";
+
+  function handleCategoryChange(event) {
+    setSelectedCategory(event.target.value);
+  }
 
   useEffect(() => {
     getAllProduct();
@@ -30,9 +35,20 @@ function ProductList() {
 
   return (
     <>
+      <div className="tab">
+        <button value={1} onClick={handleCategoryChange} className="btn__tab">
+          HOA QUẢ
+        </button>
+        <button value={2} onClick={handleCategoryChange} className="btn__tab">
+          THỰC PHẨM KHÔ
+        </button>
+        <button value={3} onClick={handleCategoryChange} className="btn__tab">
+          RAU HỮU CƠ
+        </button>
+      </div>
       <div className="product__wrapper">
         <div className="wrapper">
-          <ProductItem productList={productList} />;
+          <ProductItem productList={productList} category={selectedCategory} />
         </div>
       </div>
     </>

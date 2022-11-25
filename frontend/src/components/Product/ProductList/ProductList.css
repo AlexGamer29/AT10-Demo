@@ -10,3 +10,46 @@
   max-height: 1000px;
   margin: 0 auto;
 }
+
+.tab {
+  margin: 40px auto 20px;
+  text-align: center;
+  display: table;
+  border-bottom: 1px solid #ededed;
+}
+
+.btn__tab {
+  position: relative;
+  outline: none;
+  padding: 10px 0px;
+  margin: 0px 20px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.btn__tab:hover {
+  color: #86bc42;
+  transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.btn__tab::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 0px;
+  background: #86bc42;
+  height: 3px;
+  transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.btn__tab:hover:after {
+  width: 100%;
+  background: #86bc42;
+}
+
+.btn__tab.active {
+  color: #86bc42;
+}

@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('foods', function (Blueprint $table) {
-            $table->smallIncrements('id');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('promotion_price');
-            $table->unsignedBigInteger('original_price');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('foods');
+        Schema::dropIfExists('categories');
     }
 };
